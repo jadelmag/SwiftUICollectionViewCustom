@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LYE-gY-G1J">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Stream View Controller-->
+        <scene sceneID="bfF-gf-OuB">
+            <objects>
+                <collectionViewController id="LYE-gY-G1J" customClass="PhotoStreamViewController" customModule="SwiftUICollectionViewCustom" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="e9Y-k2-g9a">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewLayout key="collectionViewLayout" id="DrB-RW-Sad" customClass="PinterestLayout" customModule="SwiftUICollectionViewCustom" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnnotatedPhotoCell" id="40U-KH-QDl" customClass="AnnotatedPhotoCell" customModule="SwiftUICollectionViewCustom" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="N5y-eS-kyg" customClass="RoundedCornersView" customModule="SwiftUICollectionViewCustom" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g70-mc-zhN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="dJP-y1-iLS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQw-Ze-RYm">
+                                                    <rect key="frame" x="4" y="124" width="172" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="qfo-u7-HxU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqF-e9-FUy">
+                                                    <rect key="frame" x="4" y="141" width="172" height="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="mqF-e9-FUy" firstAttribute="top" secondItem="BQw-Ze-RYm" secondAttribute="bottom" id="0ml-5g-4HN"/>
+                                                <constraint firstItem="BQw-Ze-RYm" firstAttribute="top" secondItem="g70-mc-zhN" secondAttribute="bottom" constant="4" id="V3Q-3I-YVU"/>
+                                                <constraint firstAttribute="trailing" secondItem="mqF-e9-FUy" secondAttribute="trailing" constant="4" id="VKR-QY-t85"/>
+                                                <constraint firstItem="g70-mc-zhN" firstAttribute="top" secondItem="N5y-eS-kyg" secondAttribute="top" id="f4I-7e-ed9"/>
+                                                <constraint firstAttribute="trailing" secondItem="g70-mc-zhN" secondAttribute="trailing" id="fC0-cn-iYU"/>
+                                                <constraint firstItem="BQw-Ze-RYm" firstAttribute="leading" secondItem="N5y-eS-kyg" secondAttribute="leading" constant="4" id="g0r-LT-IMj"/>
+                                                <constraint firstItem="mqF-e9-FUy" firstAttribute="leading" secondItem="N5y-eS-kyg" secondAttribute="leading" constant="4" id="tjP-ba-0dX"/>
+                                                <constraint firstAttribute="trailing" secondItem="BQw-Ze-RYm" secondAttribute="trailing" constant="4" id="xhJ-nT-jzS"/>
+                                                <constraint firstItem="g70-mc-zhN" firstAttribute="leading" secondItem="N5y-eS-kyg" secondAttribute="leading" id="yTf-qc-qbY"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="N5y-eS-kyg" firstAttribute="leading" secondItem="40U-KH-QDl" secondAttribute="leading" id="apF-oe-g2k"/>
+                                    <constraint firstItem="N5y-eS-kyg" firstAttribute="top" secondItem="40U-KH-QDl" secondAttribute="top" id="da9-ff-fnw"/>
+                                    <constraint firstAttribute="trailing" secondItem="N5y-eS-kyg" secondAttribute="trailing" id="hnz-EK-p7C"/>
+                                    <constraint firstAttribute="bottom" secondItem="N5y-eS-kyg" secondAttribute="bottom" id="xBq-ML-dTj"/>
+                                </constraints>
+                                <size key="customSize" width="180" height="180"/>
+                                <connections>
+                                    <outlet property="captionLabel" destination="BQw-Ze-RYm" id="XQL-C1-utQ"/>
+                                    <outlet property="commentLabel" destination="mqF-e9-FUy" id="aoL-OD-MYc"/>
+                                    <outlet property="imageView" destination="g70-mc-zhN" id="Nrt-tl-Im6"/>
+                                    <outlet property="imageViewHeightLayoutConstraint" destination="dJP-y1-iLS" id="WHp-oZ-blE"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="LYE-gY-G1J" id="fOl-RW-IDj"/>
+                            <outlet property="delegate" destination="LYE-gY-G1J" id="35B-lD-9W6"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cQ-mB-zI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88" y="286"/>
+        </scene>
+    </scenes>
+</document>
